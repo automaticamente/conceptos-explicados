@@ -1,6 +1,13 @@
+var fs = require('fs');
 var _ = require('underscore');
 
 var words = require('./words.json');
+
+var Twit = require('twit');
+
+var config = fs.existsSync('./local.config.js') ? require('./local.config.js') : require('./config.js');
+
+var Twitter = new Twit(config.API);
 
 var con1 = [{
     m: ' pódese entender como ',
@@ -33,7 +40,7 @@ var con1 = [{
         f: 'da ',
     }
 }, {
-    m: ', debería estudarse como ',
+    m: ' debería estudarse como ',
     g: {
         m: 'un ',
         f: 'unha ',
@@ -41,15 +48,14 @@ var con1 = [{
 
 }];
 
-var con2 = [
-{
+var con2 = [{
     m: ', sempre '
-},{
+}, {
     m: ', pero '
 }, {
     m: ', dende o punto de vista ',
     g: 'm'
-},{
+}, {
     m: ', sutilmente '
 }, {
     m: ', en parte '
@@ -112,9 +118,20 @@ var build = function() {
     return result;
 };
 
-var i = 20;
+var tweet = function() {
+    'use strict';
 
-while (i > 0) {
-    console.log(build());
-    i--;
-}
+    var status = build();
+
+    Twitter.post('statuses/update', {
+        status: status
+    }, function(error, data, response) {
+        if (error) {
+            throw new Error(error);
+        }
+
+        console.log(status);
+    });
+};
+
+tweet();
