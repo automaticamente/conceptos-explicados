@@ -1,0 +1,28 @@
+{
+  "name": "conceptos-explicados",
+  "version": "0.0.1",
+  "description": "A bot that explains complicated concepts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bertez/conceptos-explicados.git"
+  },
+  "keywords": [
+    "bot",
+    "twitter"
+  ],
+  "author": "Berto Yáñez <berto@ber.to>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bertez/conceptos-explicados/issues"
+  },
+  "homepage": "https://github.com/bertez/conceptos-explicados#readme",
+  "dependencies": {
+    "string": "^3.3.0",
+    "twit": "^2.1.0",
+    "underscore": "^1.8.3"
+  }
+}
