@@ -9,74 +9,6 @@ var config = fs.existsSync('./local.config.js') ? require('./local.config.js') :
 
 var Twitter = new Twit(config.API);
 
-var con1 = [{
-    m: ' pódese entender como ',
-    g: {
-        m: 'un ',
-        f: 'unha '
-    }
-}, {
-    m: ' conceptualmente é unha derivación ',
-    g: {
-        m: 'do ',
-        f: 'da ',
-    }
-}, {
-    m: ' pode analizarse dende o prisma ',
-    g: {
-        m: 'do ',
-        f: 'da ',
-    }
-}, {
-    m: ' é unha extensión ',
-    g: {
-        m: 'do ',
-        f: 'da ',
-    }
-}, {
-    m: ', que fermosa metáfora ',
-    g: {
-        m: 'do ',
-        f: 'da ',
-    }
-}, {
-    m: ' debería estudarse como ',
-    g: {
-        m: 'un ',
-        f: 'unha ',
-    }
-}];
-
-var con2 = [{
-    m: ', sempre '
-}, {
-    m: ', pero '
-}, {
-    m: ', dende o punto de vista ',
-    g: 'm'
-}, {
-    m: ', sutilmente '
-}, {
-    m: ', en parte '
-}, {
-    m: ', sen dúbida '
-}];
-
-var con3 = [{
-    m: ' e '
-}, {
-    m: ', nunca '
-}, {
-    m: ' e con influenza ',
-    g: 'f'
-}, {
-    m: ' máis '
-}, {
-    m: ', certamente '
-}, {
-    m: ', abertamente '
-}];
-
 var getSubSet = function(classes) {
     'use strict';
 
@@ -93,12 +25,12 @@ var build = function() {
         return word.word.slice(-4) === 'ismo';
     }));
 
-    var c1 = _.sample(con1);
+    var c1 = _.sample(config.con1);
 
     var name = _.sample(getSubSet([nameGender]));
 
-    var c2 = _.sample(con2);
-    var c3 = _.sample(con3);
+    var c2 = _.sample(config.con2);
+    var c3 = _.sample(config.con3);
 
     var ad = _.sample(getSubSet(['a']));
     var ad2 = _.sample(getSubSet(['a']));
