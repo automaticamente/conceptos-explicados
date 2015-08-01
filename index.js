@@ -45,7 +45,6 @@ var con1 = [{
         m: 'un ',
         f: 'unha ',
     }
-
 }];
 
 var con2 = [{
@@ -141,6 +140,6 @@ setInterval(function() {
     } catch (e) {
         console.log(e);
     }
-}, 1000 * 60 * 15);
+}, 1000 * 60 * 30);
 
 tweet();
