@@ -64,7 +64,7 @@ module.exports = {
         m: ' e con influencia ',
         g: 'f'
     }, {
-        m: ', máis '
+        m: ', mais '
     }, {
         m: ', certamente '
     }, {
