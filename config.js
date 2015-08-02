@@ -61,10 +61,10 @@ module.exports = {
     }, {
         m: ', nunca '
     }, {
-        m: ' e con influenza ',
+        m: ' e con influencia ',
         g: 'f'
     }, {
-        m: ' máis '
+        m: ', máis '
     }, {
         m: ', certamente '
     }, {
