@@ -72,6 +72,6 @@ setInterval(function() {
     } catch (e) {
         console.log(e);
     }
-}, 1000 * 60 * 30);
+}, 1000 * 60 * 120);
 
 tweet();
